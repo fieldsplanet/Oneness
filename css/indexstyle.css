@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: block;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 30px 0;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+  text-align: left;
+  padding-left: 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.meditation-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  /* margin-bottom: 60px; */
+  object-fit: contain;
+}
+
+.content-section h2 {
+  font-size: 64px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+.content-section p {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  line-height: 1.7;
+}
+
+.cta-button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 18px 45px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: none;
+  position: relative;
+}
+
+.cta-button::before {
+  content: "";
+  margin-right: 0;
+  font-size: 0;
+}
+
+.cta-button:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .content-section h2 {
+    font-size: 52px;
+  }
+
+  .content-section p {
+    font-size: 16px;
+    max-width: 500px;
+  }
+
+  .meditation-image {
+    max-width: 400px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 20px 0;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .main-content {
+    padding: 20px 0;
+  }
+
+  .meditation-image {
+    max-width: 320px;
+    margin-bottom: 40px;
+  }
+
+  .content-section h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+
+  .content-section p {
+    font-size: 16px;
+    max-width: 100%;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    padding: 16px 35px;
+    font-size: 13px;
+    border-radius: 0;
+  }
+
+  .cta-button::before {
+    content: "";
+    font-size: 0;
+    margin-right: 0;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .meditation-image {
+    max-width: 280px;
+    margin-bottom: 35px;
+  }
+
+  .content-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .content-section p {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 12px;
+    border-radius: 0;
+  }
+
+  .cta-button::before {
+    content: "";
+    font-size: 0;
+    margin-right: 0;
+  }
+}
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.credit {
+  font-size: 14px;
+  color: #888;
+  font-family: "Inter", sans-serif;
+}
+
+.credit a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.credit a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Mobile footer styles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .copyright,
+  .credit {
+    font-size: 12px;
+  }
+}
+
+/* Extra small mobile styles */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .meditation-image {
+    max-width: 250px;
+  }
+
+  .content-section h2 {
+    font-size: 28px;
+  }
+
+  .content-section p {
+    font-size: 14px;
+  }
+}
