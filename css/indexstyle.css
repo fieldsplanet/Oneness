@@ -1,3 +1,40 @@
+/* CSS Custom Properties for 2025 Design System */
+:root {
+  /* Typography Scale */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-size-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+  --font-size-4xl: clamp(2.25rem, 1.8rem + 2.25vw, 3rem);
+  --font-size-5xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+
+  /* Spacing Scale */
+  --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --space-sm: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+  --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+  --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+  --space-xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --space-2xl: clamp(3rem, 2.4rem + 3vw, 4rem);
+
+  /* Colors */
+  --color-primary: #333;
+  --color-secondary: #666;
+  --color-accent: #000;
+  --color-background: #f8f8f8;
+  --color-text: #333;
+  --color-text-muted: #666;
+
+  /* Layout */
+  --container-padding: clamp(1rem, 2vw, 2rem);
+  --container-max-width: 1200px;
+
+  /* Touch targets */
+  --touch-target-min: 44px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,355 +43,317 @@
 
 body {
   font-family: "Playfair Display", serif;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: var(--color-background);
+  color: var(--color-text);
   line-height: 1.6;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-size: var(--font-size-base);
 }
 
 .container {
   width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0 20px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  max-width: var(--container-max-width);
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  justify-content: space-between;
 }
 
 .header {
-  padding: 15px 0;
+  padding: var(--space-md) 0;
   flex-shrink: 0;
 }
 
 .header h1 {
-  font-size: 32px;
+  font-size: var(--font-size-3xl);
   font-weight: 400;
-  color: #333;
+  color: var(--color-primary);
   text-align: left;
-  padding-left: 0;
-  margin-left: 0;
+  line-height: 1.2;
 }
 
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 10px 0;
-  min-height: 0;
-  overflow: hidden;
+  padding: var(--space-lg) 0;
+  gap: var(--space-lg);
 }
 
 .meditation-image {
   width: 100%;
-  max-width: 350px;
-  max-height: 250px;
+  max-width: clamp(280px, 25vw, 400px);
   height: auto;
   object-fit: contain;
-  margin-bottom: 15px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .content-section h2 {
-  font-size: 42px;
+  font-size: var(--font-size-4xl);
   font-weight: 400;
-  color: #333;
-  margin-bottom: 15px;
-  letter-spacing: -1px;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .content-section p {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: var(--font-size-lg);
+  font-weight: 300;
   font-family: "Inter", sans-serif;
-  color: #666;
-  max-width: 500px;
-  margin: 0 auto 20px auto;
-  line-height: 1.5;
+  color: var(--color-text-muted);
+  max-width: clamp(300px, 50vw, 600px);
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .cta-button {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 18px 45px;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  margin: 60px;
   letter-spacing: 1px;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 0;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: none;
   position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
 }
 
-.cta-button::before {
+.cta-button:after {
   content: "";
-  margin-right: 0;
-  font-size: 0;
+  background-color: #8dcfd9;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
 }
 
-.cta-button:hover {
-  background-color: #333333;
-  transform: translateY(-2px);
-  box-shadow: none;
+.cta-button:hover:after {
+  top: 0px;
+  left: 0px;
 }
 
-/* Tablet styles */
-@media (max-width: 1024px) {
+.cta-button:active {
+  transform: translateY(1px);
+}
+
+/* Modern Responsive Design - 2025 Standards */
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
   .container {
-    padding: 0 30px;
-    width: 100%;
-  }
-
-  .header {
-    padding: 15px 0;
-  }
-
-  .header h1 {
-    font-size: 30px;
-    text-align: left;
-  }
-
-  .main-content {
-    padding: 20px 0;
-    justify-content: space-evenly;
-  }
-
-  .content-section h2 {
-    font-size: 40px;
-    margin-bottom: 18px;
-    line-height: 1.2;
-  }
-
-  .content-section p {
-    font-size: 16px;
-    max-width: 500px;
-    margin-bottom: 25px;
-    line-height: 1.6;
+    max-width: 1400px;
   }
 
   .meditation-image {
-    max-width: 350px;
-    max-height: 220px;
-    margin-bottom: 18px;
+    max-width: 450px;
+  }
+
+  .cta-button {
+    padding: 13px 50px 13px;
   }
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
+/* Desktop (1024px - 1439px) */
+@media (max-width: 1439px) and (min-width: 1024px) {
   .container {
-    padding: 0 20px;
-    width: 100%;
+    padding: 0 var(--space-xl);
   }
 
-  .header {
-    padding: 12px 0;
+  .cta-button {
+    padding: 13px 50px 13px;
   }
+}
 
-  .header h1 {
-    font-size: 28px;
-    text-align: left;
-    padding-left: 0;
-    margin: 0;
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-lg);
   }
 
   .main-content {
-    padding: 15px 0;
-    justify-content: space-evenly;
+    gap: var(--space-xl);
   }
 
   .meditation-image {
-    max-width: 320px;
-    max-height: 240px;
-    margin-bottom: 20px;
+    max-width: clamp(300px, 30vw, 350px);
   }
 
-  .content-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    line-height: 1.2;
+  .cta-button {
+    padding: 13px 50px 13px;
+  }
+}
+
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .header {
+    padding: var(--space-sm) 0;
+  }
+
+  .main-content {
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+  }
+
+  .meditation-image {
+    max-width: clamp(250px, 40vw, 320px);
   }
 
   .content-section p {
-    font-size: 16px;
     max-width: 100%;
-    margin-bottom: 30px;
-    padding: 0 5px;
-    line-height: 1.6;
-  }
-
-  .cta-button {
-    padding: 16px 40px;
-    font-size: 13px;
-    border-radius: 0;
-    margin-bottom: 10px;
-  }
-
-  .cta-button::before {
-    content: "";
-    font-size: 0;
-    margin-right: 0;
+    padding: 0 var(--space-xs);
   }
 }
 
-/* Small mobile styles */
+/* Mobile Small (320px - 480px) */
 @media (max-width: 480px) {
-  .header {
-    padding: 10px 0;
+  .container {
+    padding: 0 var(--space-sm);
   }
 
-  .header h1 {
-    font-size: 24px;
+  .header {
+    padding: var(--space-xs) 0;
   }
 
   .main-content {
-    padding: 10px 0;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
   }
 
   .meditation-image {
-    max-width: 280px;
-    max-height: 200px;
-    margin-bottom: 15px;
-  }
-
-  .content-section h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    line-height: 1.1;
+    max-width: clamp(200px, 50vw, 280px);
   }
 
   .content-section p {
-    font-size: 15px;
-    margin-bottom: 25px;
-    line-height: 1.5;
+    font-size: var(--font-size-base);
+    padding: 0;
   }
 
   .cta-button {
-    padding: 14px 35px;
-    font-size: 12px;
-    border-radius: 0;
-    margin-bottom: 5px;
+    width: 100%;
+    max-width: 280px;
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* Extra Small Mobile (320px and below) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 var(--space-xs);
   }
 
-  .cta-button::before {
-    content: "";
-    font-size: 0;
-    margin-right: 0;
+  .meditation-image {
+    max-width: 200px;
+  }
+
+  .cta-button {
+    font-size: var(--font-size-xs);
+    padding: var(--space-xs) var(--space-sm);
   }
 }
 
 .footer {
-  background-color: #f8f8f8;
-  padding: 15px 0;
+  background-color: var(--color-background);
+  padding: var(--space-lg) 0;
   text-align: center;
-  border-top: 1px solid #e0e0e0;
-  margin-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: var(--space-xl);
   flex-shrink: 0;
 }
 
 .footer-content {
   width: 100%;
   margin: 0;
-  padding: 0 20px;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 .copyright {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
   font-family: "Inter", sans-serif;
+  line-height: 1.4;
 }
 
 .credit {
-  font-size: 14px;
-  color: #888;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
   font-family: "Inter", sans-serif;
+  line-height: 1.4;
 }
 
 .credit a {
-  color: #333;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .credit a:hover {
-  color: #000;
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
-/* Mobile footer styles */
-@media (max-width: 768px) {
-  .footer {
-    padding: 20px 0;
-    margin-top: 15px;
+/* Container Queries for Component-Based Responsive Design */
+@container (max-width: 480px) {
+  .footer-content {
+    gap: var(--space-xs);
   }
 
   .copyright,
   .credit {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: var(--font-size-xs);
   }
 }
 
-/* Extra small mobile styles */
-@media (max-width: 320px) {
-  .container {
-    padding: 0 15px;
-    width: 100%;
-  }
-
-  .header {
-    padding: 8px 0;
-  }
-
-  .header h1 {
-    font-size: 22px;
-  }
-
-  .main-content {
-    padding: 8px 0;
-  }
-
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .meditation-image {
-    max-width: 250px;
-    max-height: 180px;
-    margin-bottom: 12px;
-  }
-
-  .content-section h2 {
-    font-size: 28px;
-    margin-bottom: 12px;
-  }
-
-  .content-section p {
-    font-size: 14px;
-    margin-bottom: 20px;
-    line-height: 1.4;
-  }
-
-  .cta-button {
-    padding: 12px 30px;
-    font-size: 11px;
-  }
-
-  .footer {
-    padding: 15px 0;
-    margin-top: 10px;
-  }
-
-  .copyright,
-  .credit {
-    font-size: 12px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .cta-button {
+    transition: none;
+  }
+
+  .cta-button::before {
+    display: none;
+  }
+}
+
+/* Light Mode Default - No Dark Mode */
+/* Website defaults to light mode only */
